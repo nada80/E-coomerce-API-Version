@@ -27,7 +27,7 @@ namespace APi_version.Controllers
             return _context.Category;
         }
 
-        // GET: api/Categories/5   ظظظظ
+        // GET: api/Categories/5   
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory([FromRoute] int id)
         {
