@@ -12574,11 +12574,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Material_ITI\\Angular\\API version\\APi version\\APi version\\APi version.csproj",
+      "projectUniqueName": "F:\\Material_ITI\\Templets\\E-coomerce-API-Version\\APi version\\APi version\\APi version.csproj",
       "projectName": "APi version",
-      "projectPath": "F:\\Material_ITI\\Angular\\API version\\APi version\\APi version\\APi version.csproj",
+      "projectPath": "F:\\Material_ITI\\Templets\\E-coomerce-API-Version\\APi version\\APi version\\APi version.csproj",
       "packagesPath": "C:\\Users\\Nada Ahmed\\.nuget\\packages\\",
-      "outputPath": "F:\\Material_ITI\\Angular\\API version\\APi version\\APi version\\obj\\",
+      "outputPath": "F:\\Material_ITI\\Templets\\E-coomerce-API-Version\\APi version\\APi version\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
