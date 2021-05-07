@@ -24,7 +24,7 @@ namespace APi_version.Controllers
         [HttpGet]
         public IEnumerable<CartItem> GetCartItem_1()
         {
-            return _context.CartItem_1;
+            return _context.CartItem;
         }
 
         // GET: api/CartItems/5
@@ -36,7 +36,7 @@ namespace APi_version.Controllers
                 return BadRequest(ModelState);
             }
 
-            var cartItem = await _context.CartItem_1.FindAsync(id);
+            var cartItem = await _context.CartItem.FindAsync(id);
 
             if (cartItem == null)
             {
@@ -90,7 +90,7 @@ namespace APi_version.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.CartItem_1.Add(cartItem);
+            _context.CartItem.Add(cartItem);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCartItem", new { id = cartItem.ID }, cartItem);
@@ -105,13 +105,13 @@ namespace APi_version.Controllers
                 return BadRequest(ModelState);
             }
 
-            var cartItem = await _context.CartItem_1.FindAsync(id);
+            var cartItem = await _context.CartItem.FindAsync(id);
             if (cartItem == null)
             {
                 return NotFound();
             }
 
-            _context.CartItem_1.Remove(cartItem);
+            _context.CartItem.Remove(cartItem);
             await _context.SaveChangesAsync();
 
             return Ok(cartItem);
@@ -119,7 +119,7 @@ namespace APi_version.Controllers
 
         private bool CartItemExists(int id)
         {
-            return _context.CartItem_1.Any(e => e.ID == id);
+            return _context.CartItem.Any(e => e.ID == id);
         }
     }
 }

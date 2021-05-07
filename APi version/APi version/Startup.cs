@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using APi_version.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using static APi_version.Models.AppDBContext;
 
 namespace APi_version
 {
@@ -33,6 +35,23 @@ namespace APi_version
 
                 options.UseSqlServer(Configuration.GetConnectionString("Cs"));
             });
+            
+            services.AddDbContext<AppDBContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+            
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+             .AddEntityFrameworkStores<AppDBContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 4;
+            }
+            );
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

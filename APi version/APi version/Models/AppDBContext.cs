@@ -6,35 +6,39 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using APi_version.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace APi_version.Models
 {
-    public class AppDBContext : DbContext
+    public class AppDBContext : IdentityDbContext
     {
+        public AppDBContext(DbContextOptions<AppDBContext> options)
+       : base(options)
+        {
+
+        }
         public class ApplicationUser : IdentityUser
         {
-
-            public string Address { get; set; }
-
-            public DateTime DateJoined { get; set; }
-
-            public string Gender { get; set; }
-
-            public string Country { get; set; }
-            [Required]
-            public bool isDeleted { get; set; }
-            public virtual List<Payment> payments { get; set; }
-        }
-        private readonly DbContextOptions _options;
-        public AppDBContext(DbContextOptions<AppDBContext> dbContextOptions)
-        : base(dbContextOptions)
-        {
+            
           
+            [Column(TypeName = "nvarchar(150)")]
+            public string FullName { get; set; }
+            [Required]
+            public string Role { get; set; }
+        }
+       
+        private readonly DbContextOptions _options;
+       
+        public class LoginModel
+        {
+            public string UserName { get; set; }
+            public string Password { get; set; }
         }
 
         public DbSet<Product> products { get; set; }
         public DbSet<Cart> Cart { get; set; }
-        public DbSet<Cart> CartItem { get; set; }
+        public DbSet<CartItem> CartItem { get; set; }
         public DbSet<Brands> Brands { get; set; }
 
         public DbSet<Category> Category { get; set; }
@@ -44,20 +48,20 @@ namespace APi_version.Models
 
         public DbSet<OrderItem> OrderItem { get; set; }
         public DbSet<Payment> Payment { get; set; }
-
-
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+           
         }
 
 
 
 
 
-        public DbSet<APi_version.Models.CartItem> CartItem_1 { get; set; }
+       
     }
 }
