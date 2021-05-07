@@ -1,0 +1,78 @@
+
+    
+insert into Brands values ('Canvas')
+insert into Brands values ('Flexform')
+insert into Brands values ('Zanotta')
+insert into Brands values ('Naive')
+insert into Brands values ('Andreu World')
+insert into Brands values ('Poliform')
+insert into Brands values ('Thonet')
+insert into Brands values ('Minotti')
+insert into Brands values ('Wittmann')
+insert into Brands values ('Cassina')
+insert into Brands values ('BALCONY')
+insert into Brands values ('BOREA')
+
+insert into [dbo].[Category] values('Sofas and armchairs')
+insert into [dbo].[Category] values('Tables and chairs')
+insert into [dbo].[Category] values('Storage systems and units')
+insert into [dbo].[Category] values('Sleeping area and bedrooms')
+insert into [dbo].[Category] values('Kids furniture')
+insert into [dbo].[Category] values('Furniture components and hardware')
+
+
+INSERT INTO [dbo].[Products] VALUES('Fabric sofa',1500 ,
+'fabric modern Sofa','grey','large','sofa3.jpg',50,1,1)
+
+INSERT INTO [dbo].[Products] VALUES('Modular sofa',1500 ,
+'modular comfortable sofa','black','large','sofa6.jpg',50,1,2)
+
+INSERT INTO [dbo].[Products] VALUES
+  ('Sectional fabric sofa',3000  ,'fabric sofas are always unique','golden brown','large','sofa16.jpg',50, 1, 3)
+
+
+INSERT INTO [dbo].[Products] VALUES
+  ('Modular fabric sofa',3000  , 'modular fabric sofa for modern designs','light grey','large', 'sofa18.jpg', 50, 1,1)
+
+
+INSERT INTO [dbo].[Products] VALUES
+  ('Leather sofa',5300  ,'leather sofa sor formal places','brown','large','sofa1.jpg',50,1,2)
+
+
+INSERT INTO [dbo].[Products]VALUES
+ ('Sectional velvet sofa',6700  ,'fancy velvet sofa','velvet','large','sofa12.jpg',100,1,3)
+
+
+INSERT INTO [dbo].[Products]VALUES
+('Solid-color square linen cushion',144  ,'you need a traditional cushion every where','any','small','cushion1.jpg',40,4,4)
+
+
+insert into [dbo].[Products] values 
+('Velvet sofa',7000,
+'beautiful velevt sofa ',
+'velvet','large','sofa9.jpg',40,1,5)
+
+
+insert into [dbo].[Products] values ('Polyester fibre sofa cushion',100,'modern cushion ','any','small','cushion2',20,4,6)
+
+
+insert into [dbo].[Products] values ('3 seater fabric sofa with removable cover',16500,'fabric sofa with removable modern cover',
+'white','large','sofa15.jpg',20,1,4)
+    
+insert into [dbo].[Products] values ('Swivel easy chair with armrests',1800,'comfortable chair with armsets',
+'beige','medium','chair2.jpg',30,2,5)
+
+
+insert into [dbo].[Products] values ('3 seater leather sofa',8000,'seater leather sofa','brown','large','sofa2.jpg',40,1,6)
+
+
+insert into [dbo].[Products] values ('Fabric easy chair with removable cover with armrests',1800,'fabric chair with removable cover',
+'Silver','medium','chair1.jpg',30,2,7)
+
+INSERT INTO [dbo].[Products] VALUES('Fabric sofa with brass structure',8000  ,'fabric modern sofa','light rose','large','sofa13.jpg',200,1,8)
+
+
+INSERT INTO [dbo].[Products] VALUES('Fabric day beds',5877.84,'modern fabric day beds','orange','large','sofa14.jpg',200,1,7)
+
+
+INSERT INTO [dbo].[Products] VALUES ('Fabric sofa with removable cover',4000  ,'modern fabric sofa with removable cover','green','large','sofa10.jpg', 200,1,8)
