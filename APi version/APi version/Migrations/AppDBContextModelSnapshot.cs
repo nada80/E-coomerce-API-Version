@@ -57,6 +57,8 @@ namespace APiversion.Migrations
 
                     b.Property<int>("CartID");
 
+                    b.Property<int>("Quantity");
+
                     b.Property<int>("productId");
 
                     b.HasKey("ID");
@@ -207,7 +209,7 @@ namespace APiversion.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("products");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

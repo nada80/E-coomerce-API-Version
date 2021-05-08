@@ -6,68 +6,28 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APi_version.Models;
-using Microsoft.AspNetCore.Identity;
-using static APi_version.Models.AppDBContext;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
-using System.Text;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace APi_version.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ApplicationUserController : ControllerBase
+    public class ApplicationUserModelsController : ControllerBase
     {
-        private UserManager<ApplicationUser>_userManager;
-
-        private SignInManager<ApplicationUser>_singInManager;
-
         private readonly AppDBContext _context;
 
-        public ApplicationUserController(AppDBContext context , UserManager<ApplicationUser> userManager , SignInManager<ApplicationUser>signInManager)
+        public ApplicationUserModelsController(AppDBContext context)
         {
-            _userManager = userManager;
-            _singInManager = signInManager;
             _context = context;
         }
-        //[HttpPost]
-        //[Route("Register")]//POST : /api/ApplicationUser/Register
-        //public async Task<Object> PostApplicationUser(ApplicationUserModel model)
-        //{
-        //    var applicationUser = new ApplicationUser()
-        //    {
-        //        UserName = model.UserName,Email = model.Email,FullName = model.FullName
-        //    };
-        //    try {
-        //        var result = await _userManager.CreateAsync(applicationUser, model.Password);
-        //        return Ok(result);
-        //    } catch (Exception ex){
-        //        throw ex;
-        //    }
-        //}
-        //[HttpPost][Route("Login")]
-        ////POST : /api/ApplicationUser/Login
-        //public async Task<IActionResult> Login(LoginModel model){
-        //    var user = await _userManager.FindByNameAsync(model.UserName);
-        //    if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
-        //    {
-        //        var tokenDescriptor = new SecurityTokenDescriptor
-        //        {
-        //            Subject = new ClaimsIdentity(new Claim[]{new Claim("UserID",user.Id.ToString())
-        //            });
-        //    }
 
-        //}
-            
-        // GET: api/ApplicationUser
+        // GET: api/ApplicationUserModels
         [HttpGet]
         public IEnumerable<ApplicationUserModel> GetApplicationUserModel()
         {
             return _context.ApplicationUserModel;
         }
 
-        // GET: api/ApplicationUser/5
+        // GET: api/ApplicationUserModels/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetApplicationUserModel([FromRoute] int id)
         {
@@ -86,7 +46,7 @@ namespace APi_version.Controllers
             return Ok(applicationUserModel);
         }
 
-        // PUT: api/ApplicationUser/5
+        // PUT: api/ApplicationUserModels/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutApplicationUserModel([FromRoute] int id, [FromBody] ApplicationUserModel applicationUserModel)
         {
@@ -121,7 +81,7 @@ namespace APi_version.Controllers
             return NoContent();
         }
 
-        // POST: api/ApplicationUser
+        // POST: api/ApplicationUserModels
         [HttpPost]
         public async Task<IActionResult> PostApplicationUserModel([FromBody] ApplicationUserModel applicationUserModel)
         {
@@ -136,7 +96,7 @@ namespace APi_version.Controllers
             return CreatedAtAction("GetApplicationUserModel", new { id = applicationUserModel.Id }, applicationUserModel);
         }
 
-        // DELETE: api/ApplicationUser/5
+        // DELETE: api/ApplicationUserModels/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteApplicationUserModel([FromRoute] int id)
         {
@@ -161,12 +121,5 @@ namespace APi_version.Controllers
         {
             return _context.ApplicationUserModel.Any(e => e.Id == id);
         }
-
-
-
-
-       
-
-
     }
 }

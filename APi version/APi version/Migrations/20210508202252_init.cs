@@ -246,7 +246,7 @@ namespace APiversion.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "products",
+                name: "Products",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -263,15 +263,15 @@ namespace APiversion.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_products", x => x.ID);
+                    table.PrimaryKey("PK_Products", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_products_Brands_BrandID",
+                        name: "FK_Products_Brands_BrandID",
                         column: x => x.BrandID,
                         principalTable: "Brands",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_products_Category_CategoryID",
+                        name: "FK_Products_Category_CategoryID",
                         column: x => x.CategoryID,
                         principalTable: "Category",
                         principalColumn: "ID",
@@ -285,6 +285,7 @@ namespace APiversion.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     productId = table.Column<int>(nullable: false),
+                    Quantity = table.Column<int>(nullable: false),
                     CartID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -297,9 +298,9 @@ namespace APiversion.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CartItem_products_productId",
+                        name: "FK_CartItem_Products_productId",
                         column: x => x.productId,
-                        principalTable: "products",
+                        principalTable: "Products",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -317,9 +318,9 @@ namespace APiversion.Migrations
                 {
                     table.PrimaryKey("PK_Offers", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Offers_products_ProductID",
+                        name: "FK_Offers_Products_ProductID",
                         column: x => x.ProductID,
-                        principalTable: "products",
+                        principalTable: "Products",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -348,9 +349,9 @@ namespace APiversion.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OrderItem_products_ProductID",
+                        name: "FK_OrderItem_Products_ProductID",
                         column: x => x.ProductID,
-                        principalTable: "products",
+                        principalTable: "Products",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -435,13 +436,13 @@ namespace APiversion.Migrations
                 column: "userID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_products_BrandID",
-                table: "products",
+                name: "IX_Products_BrandID",
+                table: "Products",
                 column: "BrandID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_products_CategoryID",
-                table: "products",
+                name: "IX_Products_CategoryID",
+                table: "Products",
                 column: "CategoryID");
         }
 
@@ -484,7 +485,7 @@ namespace APiversion.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "products");
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
