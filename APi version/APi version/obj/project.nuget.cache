@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hXLYudK2ofs5Lg+SR7FJElb34/vtRtwrOBLSOvg32LOR5zcVIaYmFsWOiYxtQ37l0yHwR3PDguQx4/XRW5I9cQ==",
+  "dgSpecHash": "Cib7KkUudvC/el+QoFpeomr49N1Ni3jVZOCkvx2ycHkLwft0TcFsQegAWsc/9xvKXyDThnzXJAbk3KXUArawaw==",
   "success": true,
   "projectFilePath": "D:\\ITI\\Angular\\Repo\\E-coomerce-API-Version\\APi version\\APi version\\APi version.csproj",
   "expectedPackageFiles": [
@@ -301,6 +301,22 @@
     "C:\\Users\\israa\\.nuget\\packages\\system.xml.xpath.xdocument\\4.3.0\\system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\ITI\\Angular\\Repo\\E-coomerce-API-Version\\APi version\\APi version\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "APi version depends on Microsoft.AspNetCore.Razor.Design (>= 2.1.110) but Microsoft.AspNetCore.Razor.Design 2.1.110 was not found. An approximate best match of Microsoft.AspNetCore.Razor.Design 2.2.0 was resolved.",
+      "libraryId": "Microsoft.AspNetCore.Razor.Design",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
     {
       "code": "NU1608",
       "level": "Warning",
