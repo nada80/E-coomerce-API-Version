@@ -8,6 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using APi_version.Models;
 using Microsoft.AspNetCore.Identity;
 using static APi_version.Models.AppDBContext;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace APi_version.Controllers
 {
@@ -27,28 +31,35 @@ namespace APi_version.Controllers
             _singInManager = signInManager;
             _context = context;
         }
-        [HttpPost]
-       
-        //POST : /api/ApplicationUser/Register
-        public async Task<Object> PostApplicationUser(ApplicationUserModel model)
-        {​​​​​
-          var applicationUser = new ApplicationUser()
-          {​​​​​
-            UserName = model.UserName,
-              Email = model.Email,
-              FullName = model.FullName
-          }​​​​​;
-            try {
-                var result = await _userManager.CreateAsync(applicationUser, model.Password);
-                return Ok(result);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }​​​​​
+        //[HttpPost]
+        //[Route("Register")]//POST : /api/ApplicationUser/Register
+        //public async Task<Object> PostApplicationUser(ApplicationUserModel model)
+        //{
+        //    var applicationUser = new ApplicationUser()
+        //    {
+        //        UserName = model.UserName,Email = model.Email,FullName = model.FullName
+        //    };
+        //    try {
+        //        var result = await _userManager.CreateAsync(applicationUser, model.Password);
+        //        return Ok(result);
+        //    } catch (Exception ex){
+        //        throw ex;
+        //    }
+        //}
+        //[HttpPost][Route("Login")]
+        ////POST : /api/ApplicationUser/Login
+        //public async Task<IActionResult> Login(LoginModel model){
+        //    var user = await _userManager.FindByNameAsync(model.UserName);
+        //    if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+        //    {
+        //        var tokenDescriptor = new SecurityTokenDescriptor
+        //        {
+        //            Subject = new ClaimsIdentity(new Claim[]{new Claim("UserID",user.Id.ToString())
+        //            });
+        //    }
 
-     
+        //}
+            
         // GET: api/ApplicationUser
         [HttpGet]
         public IEnumerable<ApplicationUserModel> GetApplicationUserModel()
@@ -156,31 +167,6 @@ namespace APi_version.Controllers
 
        
 
- [HttpPost]
-        [Route("Login")]
-        //POST : /api/ApplicationUser/Login
-        public async Task<IActionResult> Login(LoginModel model)
-        {​​​​​
-var user = await _userManager.FindByNameAsync(model.UserName);
-            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
-            {​​​​​
-var tokenDescriptor = new SecurityTokenDescriptor
-{​​​​​
-Subject = new ClaimsIdentity(new Claim[]
-{​​​​​
-new Claim("UserID",user.Id.ToString())
-}​​​​​),
-    Expires = DateTime.UtcNow.AddDays(1),
-    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
-}​​​​​;
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-                var token = tokenHandler.WriteToken(securityToken);
-                return Ok(new {​​​​​ token }​​​​​);
-            }​​​​​
-else
-return BadRequest(new {​​​​​ message = "Username or password is incorrect." }​​​​​);
-        }​​​​​
 
     }
 }

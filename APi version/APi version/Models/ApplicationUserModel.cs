@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+<<<<<<< Updated upstream
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+=======
+>>>>>>> Stashed changes
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +12,7 @@ namespace APi_version.Models
 {
     public class ApplicationUserModel
     {
+<<<<<<< Updated upstream
         [Key]
         public int Id { get; set; }
         [Required]
@@ -23,5 +27,7 @@ namespace APi_version.Models
         public string FullName { get; set; }
 
 
+=======
+>>>>>>> Stashed changes
     }
 }
