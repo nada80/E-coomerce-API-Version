@@ -24,7 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "APi version/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore": "2.1.7",
+          "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.AspNetCore.App": "2.1.1",
 <<<<<<< Updated upstream
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.1.1",
