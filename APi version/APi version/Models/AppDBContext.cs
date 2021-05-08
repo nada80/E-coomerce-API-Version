@@ -13,8 +13,7 @@ namespace APi_version.Models
 {
     public class AppDBContext : IdentityDbContext
     {
-        public AppDBContext(DbContextOptions<AppDBContext> options)
-       : base(options)
+        public AppDBContext(DbContextOptions<AppDBContext> options): base(options)
         {
 
         }
@@ -49,7 +48,7 @@ namespace APi_version.Models
         public DbSet<OrderItem> OrderItem { get; set; }
         public DbSet<Payment> Payment { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-
+        
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
