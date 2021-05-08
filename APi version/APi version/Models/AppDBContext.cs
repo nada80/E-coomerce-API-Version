@@ -56,6 +56,10 @@ namespace APi_version.Models
             base.OnModelCreating(modelBuilder);
            
         }
+        
+
+
+        public DbSet<APi_version.Models.ApplicationUserModel> ApplicationUserModel { get; set; }
 
 
 
