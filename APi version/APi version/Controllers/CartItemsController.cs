@@ -22,7 +22,7 @@ namespace APi_version.Controllers
 
         // GET: api/CartItems
         [HttpGet]
-        public IEnumerable<CartItem> GetCartItem_1()
+        public IEnumerable<CartItem> GetCartItem()
         {
             return _context.CartItem;
         }

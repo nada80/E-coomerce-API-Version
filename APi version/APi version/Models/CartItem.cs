@@ -13,7 +13,7 @@ namespace APi_version.Models
         [ForeignKey("product")]
         public int productId { get; set; }
         public virtual Product product { get; set; }
-
+        public int Quantity { get; set; }
         [ForeignKey("cart")]
         public int CartID { get; set; }
         public virtual Cart cart { get; set; }

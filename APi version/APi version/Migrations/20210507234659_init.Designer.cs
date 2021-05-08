@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace APi_version.Migrations
+namespace APiversion.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20210507230419_init")]
+    [Migration("20210507234659_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
