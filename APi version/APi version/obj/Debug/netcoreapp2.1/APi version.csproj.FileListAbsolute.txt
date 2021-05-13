@@ -12,20 +12,6 @@ F:\Material_ITI\Angular\API version\APi version\APi version\obj\Debug\netcoreapp
 F:\Material_ITI\Angular\API version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.pdb
 F:\Material_ITI\Angular\API version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.dll
 F:\Material_ITI\Angular\API version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.pdb
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.deps.json
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.runtimeconfig.json
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.runtimeconfig.dev.json
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.dll
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.pdb
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.csprojAssemblyReference.cache
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.csproj.CoreCompileInputs.cache
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.RazorAssemblyInfo.cache
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.RazorAssemblyInfo.cs
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.AssemblyInfoInputs.cache
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.AssemblyInfo.cs
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.RazorTargetAssemblyInfo.cache
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.dll
-F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.pdb
 D:\ITI\Angular\Repo\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\appsettings.Development.json
 D:\ITI\Angular\Repo\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\appsettings.json
 D:\ITI\Angular\Repo\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.deps.json
@@ -57,3 +43,17 @@ F:\Material_ITI\Angular\API version\E-coomerce-API-Version\APi version\APi versi
 F:\Material_ITI\Angular\API version\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.RazorTargetAssemblyInfo.cache
 F:\Material_ITI\Angular\API version\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.dll
 F:\Material_ITI\Angular\API version\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.pdb
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.deps.json
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.runtimeconfig.json
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.runtimeconfig.dev.json
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.dll
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\bin\Debug\netcoreapp2.1\APi version.pdb
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.csproj.CoreCompileInputs.cache
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.RazorAssemblyInfo.cache
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.RazorAssemblyInfo.cs
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.AssemblyInfoInputs.cache
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.AssemblyInfo.cs
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.RazorTargetAssemblyInfo.cache
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.dll
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.pdb
+F:\Material_ITI\Templets\E-coomerce-API-Version\APi version\APi version\obj\Debug\netcoreapp2.1\APi version.csprojAssemblyReference.cache

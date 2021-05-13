@@ -27,7 +27,7 @@ namespace APi_version.Models
             public string Role { get; set; }
         }
        
-        private readonly DbContextOptions _options;
+        //private readonly DbContextOptions _options;
        
         public class LoginModel
         {
@@ -35,7 +35,7 @@ namespace APi_version.Models
             public string Password { get; set; }
         }
 
-        public DbSet<Product> products { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<Cart> Cart { get; set; }
         public DbSet<CartItem> CartItem { get; set; }
         public DbSet<Brands> Brands { get; set; }
@@ -56,6 +56,14 @@ namespace APi_version.Models
             base.OnModelCreating(modelBuilder);
            
         }
+        
+
+
+        public DbSet<APi_version.Models.ApplicationUserModel> ApplicationUserModel { get; set; }
+        
+
+
+        //public DbSet<APi_version.Models.ApplicationUserModel> ApplicationUserModel { get; set; }
 
 
 

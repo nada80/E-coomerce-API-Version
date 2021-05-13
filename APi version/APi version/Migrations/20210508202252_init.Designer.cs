@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APiversion.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20210507234659_init")]
+    [Migration("20210508202252_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,6 +58,8 @@ namespace APiversion.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CartID");
+
+                    b.Property<int>("Quantity");
 
                     b.Property<int>("productId");
 
@@ -209,7 +211,7 @@ namespace APiversion.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.ToTable("products");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
