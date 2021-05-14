@@ -53,9 +53,8 @@ namespace APi_version.Controllers
 
                 if (result.Succeeded)
                 {
-                    _context.Carts.Add(new Cart() { ID = identity.Id });
+                    _context.Cart.Add(new Cart() { UserID = identity.Id });
                     //_context.SaveChanges();
-                    _context.WishLists.Add(new Wishlist() { UserID = identity.Id });
                     _context.SaveChanges();
                     //  return Redirect("http://localhost:49682/Student_Index.html");
                     return Ok();
