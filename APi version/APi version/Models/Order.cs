@@ -17,7 +17,7 @@ namespace APi_version.Models
 
         [ForeignKey("Users")]
         public string ApplicationUser_Id { get; set; }
-        public virtual ApplicationUser Users { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         public virtual List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 

@@ -8,24 +8,23 @@ using System.Threading.Tasks;
 using APi_version.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using AutoMapper;
+using AutoMapper.Configuration;
+using APi_version.Mapper;
 
 namespace APi_version.Models
 {
     public class AppDBContext : IdentityDbContext
     {
+        protected readonly IMapper Mapper = Mapperconfig.mapper;
+        protected readonly UserManager<IdentityUser> _userManager;
+        private readonly IConfiguration _configuration;
+        private readonly DbContext _context;
         public AppDBContext(DbContextOptions<AppDBContext> options): base(options)
         {
-
-        }
-        public class ApplicationUser : IdentityUser
-        {
-            
           
-            [Column(TypeName = "nvarchar(150)")]
-            public string FullName { get; set; }
-            [Required]
-            public string Role { get; set; }
-        }
+    }
+   
        
         //private readonly DbContextOptions _options;
        
@@ -56,10 +55,6 @@ namespace APi_version.Models
             base.OnModelCreating(modelBuilder);
            
         }
-        
-
-
-        public DbSet<APi_version.Models.ApplicationUserModel> ApplicationUserModel { get; set; }
         
 
 

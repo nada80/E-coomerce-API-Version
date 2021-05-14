@@ -26,7 +26,7 @@ namespace APi_version.Models
         public int Quantity { get; set; } 
 
         [ForeignKey("category")]
-        public int? CategoryID { get; set; }
+        public int CategoryID { get; set; }
 
         public virtual Category category { get; set; }
 

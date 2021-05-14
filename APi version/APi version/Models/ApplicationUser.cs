@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace APi_version.Models
 {
-    public class ApplicationUserModel
+    public class ApplicationUser : IdentityUser
     {
-        [Key]
-        public int Id { get; set; }
+        [Required]
+        [Column(TypeName = "nvarchar(70)")]
+        public string FullName { get; set; }
+      
         [Required]
         [Column(TypeName = "nvarchar(50)")]
         public string UserName { get; set; }
@@ -18,10 +21,13 @@ namespace APi_version.Models
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
-        [Required]
-        [Column(TypeName = "nvarchar(50)")]
-        public string FullName { get; set; }
 
+        [Compare("Password")]
+        public string ConfirmPassword { get; set; }
 
+        public virtual Cart Cart { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
+        public string Role { get; set; }
     }
 }

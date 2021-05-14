@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,13 +10,18 @@ namespace APi_version.Models
 {
     public class Cart
     {
-        public int ID { get; set; }
+        public Cart()
+        {
+            CartItems = new List<CartItem>();
+        }
+        [Key]
+        public int CartId { get; set; }
 
         [ForeignKey("users")]
         public string UserID { get; set; }
-        public virtual ApplicationUser users { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
-        public virtual List<CartItem> cartItems { get; set; } = new List<CartItem>();
+        public virtual ICollection<CartItem> CartItems { get; set; }
 
     }
 }
