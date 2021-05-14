@@ -8,9 +8,6 @@ using System.Threading.Tasks;
 using APi_version.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using AutoMapper;
-using AutoMapper.Configuration;
-using APi_version.Mapper;
 
 namespace APi_version.Models
 {
@@ -18,13 +15,17 @@ namespace APi_version.Models
     {
         public AppDBContext(DbContextOptions<AppDBContext> options): base(options)
         {
-          
-    }
-   
-       
-        //private readonly DbContextOptions _options;
-       
-        public class LoginModel
+
+        }
+
+            public AppDBContext()
+            {
+            }
+
+
+            //private readonly DbContextOptions _options;
+
+            public class LoginModel
         {
             public string UserName { get; set; }
             public string Password { get; set; }
