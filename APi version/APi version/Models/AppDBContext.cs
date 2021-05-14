@@ -16,10 +16,6 @@ namespace APi_version.Models
 {
     public class AppDBContext : IdentityDbContext
     {
-        protected readonly IMapper Mapper = Mapperconfig.mapper;
-        protected readonly UserManager<IdentityUser> _userManager;
-        private readonly IConfiguration _configuration;
-        private readonly DbContext _context;
         public AppDBContext(DbContextOptions<AppDBContext> options): base(options)
         {
           
