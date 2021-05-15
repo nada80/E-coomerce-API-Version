@@ -38,7 +38,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
-          "System.Configuration.ConfigurationManager": "5.0.0"
+          "System.Configuration.ConfigurationManager": "5.0.0",
+          "linq2db": "3.3.0"
         },
         "runtime": {
           "APi version.dll": {}
@@ -62,6 +63,22 @@
           "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
+      "linq2db/3.3.0": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Data.DataSetExtensions": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/linq2db.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.3.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp2.1/linq2db.dll": {}
+        }
+      },
       "Microsoft.AspNet.Identity.Core/2.2.3": {
         "runtime": {
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
@@ -71,6 +88,17 @@
         },
         "compile": {
           "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -244,6 +272,7 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "System.ComponentModel.Annotations/5.0.0": {},
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -380,6 +409,17 @@
         },
         "compile": {
           "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
+        }
+      },
+      "System.Data.DataSetExtensions/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        },
+        "compile": {
+          "ref/netstandard2.0/System.Data.DataSetExtensions.dll": {}
         }
       },
       "System.Linq.Parallel/4.3.0": {
@@ -1247,7 +1287,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "2.1.1",
           "Microsoft.Extensions.Localization": "2.1.1",
-          "System.ComponentModel.Annotations": "4.5.0"
+          "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.DataAnnotations.dll": {}
@@ -1780,7 +1820,7 @@
           "Microsoft.Extensions.Logging": "2.1.1",
           "Remotion.Linq": "2.2.0",
           "System.Collections.Immutable": "1.5.0",
-          "System.ComponentModel.Annotations": "4.5.0",
+          "System.ComponentModel.Annotations": "5.0.0",
           "System.Diagnostics.DiagnosticSource": "4.5.0",
           "System.Interactive.Async": "3.1.1"
         },
@@ -2100,7 +2140,7 @@
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "2.1.1",
           "Microsoft.Extensions.Logging": "2.1.1",
           "Microsoft.Extensions.Options": "2.1.1",
-          "System.ComponentModel.Annotations": "4.5.0"
+          "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll": {}
@@ -2111,7 +2151,7 @@
         "dependencies": {
           "Microsoft.Extensions.Identity.Core": "2.1.1",
           "Microsoft.Extensions.Logging": "2.1.1",
-          "System.ComponentModel.Annotations": "4.5.0"
+          "System.ComponentModel.Annotations": "5.0.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.dll": {}
@@ -2730,9 +2770,6 @@
           "System.Runtime.Extensions": "4.3.0",
           "System.Threading": "4.3.0"
         },
-        "compileOnly": true
-      },
-      "System.ComponentModel.Annotations/4.5.0": {
         "compileOnly": true
       },
       "System.Console/4.3.0": {
@@ -3573,12 +3610,26 @@
       "path": "automapper/10.1.1",
       "hashPath": "automapper.10.1.1.nupkg.sha512"
     },
+    "linq2db/3.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-81y6PdhZgItEuSuhyCvcqSlqwpYCUf4AsAncQIg/FkJ06RAQTZ3QcmtbA8UM/ZUBXSa6DJCnKQXHbGDtMOZD2g==",
+      "path": "linq2db/3.3.0",
+      "hashPath": "linq2db.3.3.0.nupkg.sha512"
+    },
     "Microsoft.AspNet.Identity.Core/2.2.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Mv5FpoaxspE8hlWLE4r1IdZtovg/OyFgVRhxQbx47J4sqdLImN1hnM1lnwCj+/wLmqtqFk/RYMoZ5GAcwm/00g==",
       "path": "microsoft.aspnet.identity.core/2.2.3",
       "hashPath": "microsoft.aspnet.identity.core.2.2.3.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W8DPQjkMScOMTtJbPwmPyj9c3zYSFGawDW3jwlBOOsnY+EzZFLgNQ/UMkK35JmkNOVPdCyPr2Tw7Vv9N+KA3ZQ==",
+      "path": "microsoft.bcl.asyncinterfaces/5.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
@@ -3671,6 +3722,13 @@
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
     },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
     "System.Composition/1.0.31": {
       "type": "package",
       "serviceable": true,
@@ -3719,6 +3777,13 @@
       "sha512": "sha512-aM7cbfEfVNlEEOj3DsZP+2g9NRwbkyiAv2isQEzw7pnkDg9ekCU2m1cdJLM02Uq691OaCS91tooaxcEn8d0q5w==",
       "path": "system.configuration.configurationmanager/5.0.0",
       "hashPath": "system.configuration.configurationmanager.5.0.0.nupkg.sha512"
+    },
+    "System.Data.DataSetExtensions/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-221clPs1445HkTBZPL+K9sDBdJRB8UN8rgjO3ztB0CQ26z//fmJXtlsr6whGatscsKGBrhJl5bwJuKSA8mwFOw==",
+      "path": "system.data.datasetextensions/4.5.0",
+      "hashPath": "system.data.datasetextensions.4.5.0.nupkg.sha512"
     },
     "System.Linq.Parallel/4.3.0": {
       "type": "package",
@@ -5119,13 +5184,6 @@
       "sha512": "sha512-Epx8PoVZR0iuOnJJDzp7pWvdfMMOAvpUo95pC4ScH2mJuXkKA2Y4aR3cG9qt2klHgSons1WFh4kcGW7cSXvrxg==",
       "path": "system.collections.specialized/4.3.0",
       "hashPath": "system.collections.specialized.4.3.0.nupkg.sha512"
-    },
-    "System.ComponentModel.Annotations/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UxYQ3FGUOtzJ7LfSdnYSFd7+oEv6M8NgUatatIN2HxNtDdlcvFAf+VIq4Of9cDMJEJC0aSRv/x898RYhB4Yppg==",
-      "path": "system.componentmodel.annotations/4.5.0",
-      "hashPath": "system.componentmodel.annotations.4.5.0.nupkg.sha512"
     },
     "System.Console/4.3.0": {
       "type": "package",

@@ -3,14 +3,18 @@ using APi_version.Mapper;
 using APi_version.Models;
 using AutoMapper;
 using AutoMapper.Configuration;
+using LinqToDB;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using static APi_version.Models.AppDBContext;
 
 namespace APi_version.Controllers
 {
@@ -42,7 +46,7 @@ namespace APi_version.Controllers
             try
             {
 
-                UserStore<IdentityUser> store = new UserStore<IdentityUser>(new DataContext());
+                UserStore<IdentityUser> store = new UserStore<IdentityUser>(new AppDBContext());
 
 
                 IdentityUser identity = new IdentityUser();
@@ -71,9 +75,9 @@ namespace APi_version.Controllers
         }
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login(Login model)
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            var user = await _userManager.FindByNameAsync(model.Username);
+            var user = await _userManager.FindByNameAsync(model.UserName);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
 
@@ -91,19 +95,19 @@ namespace APi_version.Controllers
 
 
 
-                var token = new JwtSecurityToken(
-                    issuer: _configuration["JWT:Issuer"],
-                    audience: _configuration["JWT:Audience"],
-                    expires: DateTime.Now.AddHours(3),
-                    claims: authClaims
+                //var token = new JwtSecurityToken(
+                //    issuer: _configuration["JWT:Issuer"],
+                //    audience: _configuration["JWT:Audience"],
+                //    expires: DateTime.Now.AddHours(3),
+                //    claims: authClaims
 
-                    );
+                //    );
 
-                return Ok(new
-                {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expiration = token.ValidTo
-                });
+                //return Ok(new
+                //{
+                //    token = new JwtSecurityTokenHandler().WriteToken(token),
+                //    expiration = token.ValidTo
+                //});
             }
             return Unauthorized();
         }

@@ -11,14 +11,13 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace APi_version.Models
 {
-    public class AppDBContext : IdentityDbContext
+    public class AppDBContext : IdentityDbContext<ApplicationUser>
     {
         public AppDBContext(DbContextOptions<AppDBContext> options): base(options)
         {
 
         }
-
-            public AppDBContext()
+        public AppDBContext()
             {
             }
 
@@ -43,19 +42,16 @@ namespace APi_version.Models
 
         public DbSet<OrderItem> OrderItem { get; set; }
         public DbSet<Payment> Payment { get; set; }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             base.OnModelCreating(modelBuilder);
-           
         }
         
 
-
-        //public DbSet<APi_version.Models.ApplicationUserModel> ApplicationUserModel { get; set; }
 
 
 
