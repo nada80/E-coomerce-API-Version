@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace APi_version.DTO
 {
-    public class RegisterationResponseDTO
-    {
-    }
+        public class RegistrationResponseDto
+        {
+            public bool IsSuccessfulRegistration { get; set; }
+            public IEnumerable<string> Errors { get; set; }
+        }
+    
 }

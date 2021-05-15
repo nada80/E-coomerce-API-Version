@@ -23,45 +23,44 @@ namespace APi_version.Controllers
     public class AccountController : ControllerBase
     {
         protected readonly IMapper Mapper = Mapperconfig.mapper;
-        protected readonly Microsoft.AspNetCore.Identity.UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IConfiguration _configuration;
         private readonly AppDBContext _context;
-
-        public AccountController(Microsoft.AspNetCore.Identity.UserManager<IdentityUser> userManager, IConfiguration configuration, AppDBContext context)
+        private readonly IMapper _mapper;
+        public AccountController(UserManager<ApplicationUser> userManager, IMapper mapper, IConfiguration configuration, AppDBContext context)
         {
             _userManager = userManager;
             _configuration = configuration;
             _context = context;
+            _mapper = mapper;
         }
         [HttpPost]
         [Route("register")]
-        public async Task<IActionResult> Register(UserDto userdto)
+        public async Task<IActionResult> Register([FromBody] RegisterUserDto userForRegistration)
         {
-            var user = Mapper.Map<ApplicationUser>(userdto);
+            var user = _mapper.Map<ApplicationUser>(userForRegistration);
 
-            if (!ModelState.IsValid)
+
+            if (userForRegistration == null || !ModelState.IsValid)
             {
                 return BadRequest("Data Not Valid");
             }
             try
             {
+                UserStore<ApplicationUser> store = new UserStore<ApplicationUser>(new AppDBContext());
+                ApplicationUser AppUser = new ApplicationUser();
+                AppUser.UserName = user.UserName;
+                AppUser.PasswordHash = user.Password;
 
-                UserStore<IdentityUser> store = new UserStore<IdentityUser>(new AppDBContext());
-
-
-                IdentityUser identity = new IdentityUser();
-                identity.UserName = user.UserName;
-                identity.PasswordHash = user.Password;
-
-                IdentityResult result = await _userManager.CreateAsync(identity, user.Password);
-
+                var result = await _userManager.CreateAsync(user, userForRegistration.Password);
                 if (result.Succeeded)
                 {
-                    _context.Cart.Add(new Cart() { UserID = identity.Id });
+                    _context.Cart.Add(new Cart() { UserID = AppUser.Id });
                     //_context.SaveChanges();
                     _context.SaveChanges();
                     //  return Redirect("http://localhost:49682/Student_Index.html");
-                    return Ok();
+                    
+                    return StatusCode(201);
                 }
                 else
                 {

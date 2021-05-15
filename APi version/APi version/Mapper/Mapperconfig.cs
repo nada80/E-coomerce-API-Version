@@ -20,7 +20,7 @@ namespace APi_version.Mapper
           {
               cfg.CreateMap<Product, ProductDto>().ReverseMap();
               cfg.CreateMap<Category, CategoryDto>().ReverseMap();
-              cfg.CreateMap<ApplicationUser, UserDto>().ReverseMap();
+              cfg.CreateMap<ApplicationUser, RegisterUserDto>().ReverseMap();
               cfg.CreateMap<CartItem, CartItemDto>().ReverseMap();
 
 
@@ -28,7 +28,7 @@ namespace APi_version.Mapper
 
             mapper = config.CreateMapper();
         }
-
+      
 
     }
 }
